@@ -7,17 +7,8 @@
     <li><%= @employee.email %></li>
   </ul>
 
-  <div>
-    <%= form_with model:@employee, url: company_employee_path(@company, @employee) do |f| %>
-      <%= f.label :fullname %>
-      <%= f.text_field :fullname %>
-      <%= f.label :phone_number %>
-      <%= f.text_field :phone_number %>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-      <%= f.submit %>
-    <% end  %>
-  </div>
+
+  <%= render "employees/update", company: @company, employee: @employee %>
 
   <%= link_to "Delete", company_employee_path(@company, @employee),
       data: {turbo_method: :delete, turbo_confirm: "Do you want to delete this employee?"}

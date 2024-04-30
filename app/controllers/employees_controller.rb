@@ -49,6 +49,4 @@ class EmployeesController < ApplicationController
   def employee_params
     params.require(:employee).permit(:fullname, :phone_number, :email)
   end
-
-
 end
