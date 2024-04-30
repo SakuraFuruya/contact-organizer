@@ -1,0 +1,12 @@
+<div>
+  <h1>All companies</h1>
+
+<ul>
+  <% @companies.each do |company| %>
+  <li><%= company.company_name %></li>
+  <li><%= company.industry %></li>
+  <li><%= company.address %></li>
+  <% end %>
+</ul>
+
+</div>
