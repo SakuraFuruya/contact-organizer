@@ -1,0 +1,13 @@
+<div>
+  <h1>All employees </h1>
+
+  <ul>
+    <% @employees.each do |employee| %>
+    <li><%= employee.fullname %></li>
+    <li><%= employee.phone_number %></li>
+    <li><%= employee.email %></li>
+    <%= link_to "Detail", company_employee_path(@company, employee) %>
+    <% end %>
+  </ul>
+
+</div>
