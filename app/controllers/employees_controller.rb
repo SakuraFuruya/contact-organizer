@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_company, only: %i[index create update]
+  before_action :set_company, only: %i[index show create update destroy]
   before_action :set_employee, only: %i[show edit update destroy]
 
   def index
@@ -28,10 +28,12 @@ class EmployeesController < ApplicationController
 
   def update
     @employee.update(employee_params)
-    redirect_to company_employee_path(@company, @employee)
+    redirect_to company_employees_path(@company)
   end
 
   def destroy
+    @employee.destroy
+    redirect_to company_employees_path(@company), notice: "#{@company.employees.name} was deleted"
   end
 
   private
