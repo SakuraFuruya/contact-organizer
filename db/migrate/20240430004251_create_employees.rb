@@ -5,6 +5,7 @@ class CreateEmployees < ActiveRecord::Migration[7.1]
       t.integer :phone_number
       t.string :email
 
+
       t.timestamps
     end
   end

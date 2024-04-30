@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_30_004251) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_30_005025) do
   create_table "companies", force: :cascade do |t|
     t.string "company_name"
     t.string "industry"
@@ -25,6 +25,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_004251) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "company_id"
+    t.index ["company_id"], name: "index_employees_on_company_id"
   end
 
+  add_foreign_key "employees", "companies"
 end
