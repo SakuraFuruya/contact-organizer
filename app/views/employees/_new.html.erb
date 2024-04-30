@@ -1,0 +1,11 @@
+<div>
+  <%= form_with model: new_employee, url: company_employees_path do |f| %>
+    <%= f.label :fullname %>
+    <%= f.text_field :fullname %>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.submit %>
+  <% end  %>
+</div>
