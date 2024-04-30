@@ -31,7 +31,7 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
-    @company.destroy
+    @company.destro
     redirect_to companies_path, notice: "#{@company.company_name} was deleted"
   end
 
