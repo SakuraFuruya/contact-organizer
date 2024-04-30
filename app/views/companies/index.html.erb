@@ -10,3 +10,18 @@
 </ul>
 
 </div>
+
+<div>
+
+
+  <%= form_with model: @company do |f| %>
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+    <%= f.label :industry %>
+    <%= f.text_field :industry %>
+    <%= f.label :address %>
+    <%= f.number_field :address %>
+    <%= f.submit %>
+<% end  %>
+
+</div>

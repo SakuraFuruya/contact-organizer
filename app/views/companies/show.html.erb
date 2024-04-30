@@ -1,0 +1,13 @@
+<div>
+  <h1><%= @company.company_name%> information</h1>
+
+  <ul>
+    <li><%= @company.company_name %></li>
+    <li><%= @company.industry %></li>
+    <li><%= @company.address %></li>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "employees" employees_path %>
+</div>
