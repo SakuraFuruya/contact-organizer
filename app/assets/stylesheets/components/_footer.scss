@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  min-height: 50px;
+  height:36px;
+  bottom: 40px;
+  left: 0;
+  background-color: $brown;
+
+  .footer-copyright{
+    color: $white;
+    font-size: 0.8rem;
+  }
+
+  i {
+    color: $white;
+  }
+
+}
