@@ -9,9 +9,18 @@
           <h5 class="card-text"><%= @company.company_name %></h5>
           <p class="card-text"><small class="text-body-secondary"><%= @company.industry %></small></p>
           <p class="card-text"><small class="text-body-secondary"><%= @company.address %></small></p>
+
         </div>
+
+        <div>
+          <button class="btn btn-info" >update</button>
+          <%= render "companies/update", company: @company %>
+        </div>
+
       </div>
     </div>
+
+
   </div>
 </div>
 
@@ -21,9 +30,7 @@
   <%= link_to "employees", company_employees_path(@company) %>
 </div>
 
-<div>
-  <%= render "companies/update", company: @company %>
-</div>
+
 
 <div>
   <%= link_to "Delete", company_path(@company),

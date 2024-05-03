@@ -1,11 +1,8 @@
-<div>
-  <%= form_with model: company do |f| %>
-    <%= f.label :company_name %>
-    <%= f.text_field :company_name %>
-    <%= f.label :industry %>
-    <%= f.text_field :industry %>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-    <%= f.submit %>
+<div class="d-none">
+  <%= simple_form_for(company) do |f| %>
+    <%= f.input :company_name %>
+    <%= f.input :industry %>
+    <%= f.input :address %>
+    <%= f.button :submit, class: 'btn btn-info' %>
   <% end %>
 </div>
