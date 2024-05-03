@@ -1,8 +1,13 @@
-<div class="d-none">
-  <%= simple_form_for(company) do |f| %>
-    <%= f.input :company_name %>
-    <%= f.input :industry %>
-    <%= f.input :address %>
-    <%= f.button :submit, class: 'btn btn-info' %>
-  <% end %>
+<div>
+  <button class="btn btn-info" data-action="click->edit#displayForm">update</button>
+  <div data-edit-target="form" class="d-none">
+    <%= simple_form_for(company) do |f| %>
+      <%= f.input :company_name %>
+      <%= f.input :industry %>
+      <%= f.input :address %>
+      <%= f.button :submit, class: 'btn btn-info' %>
+    <% end %>
+  </div>
+
+
 </div>
