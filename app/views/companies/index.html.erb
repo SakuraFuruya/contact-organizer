@@ -1,17 +1,50 @@
-<div>
-  <h1>All companies</h1>
 
-  <ul>
-    <% @companies.each do |company| %>
-    <li><%= company.company_name %></li>
-    <li><%= company.industry %></li>
-    <li><%= company.address %></li>
-    <li><%= link_to "detail", company_path(company) %></li>
-    <% end %>
-  </ul>
+<div class="container">
 
-  <h2>Create a new company</h2>
-  <%= render 'companies/new', company: @company %>
+
+  <div class="row">
+
+    <div class="col-lg-3 col-md-12" id="form-map">
+      <div class="row mt-2">
+        <div col-lg-12>
+          <h4 class="text-center mt-3">Create a new company</h4>
+          <div class="container-md d-flex justify-content-center">
+            <%= render 'companies/new', company: @company %>
+          </div>
+        </div>
+
+        <div>
+          <img class="w-100 h-100" src="https://images.unsplash.com/photo-1619468129361-605ebea04b44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFwfGVufDB8fDB8fHww" alt="">
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="col-lg-9 col-md-12" id="cards-list">
+      <div class="width-100">
+        <div class="row mt-2">
+          <h2 class="text-center mt-3">All Companies</h2>
+          <div class="row cards-container p-1 m-1 d-flex justify-content-start">
+            <% @companies.each do |company| %>
+              <div class="col-lg-3 col-md-4 col-sm-12 m-4">
+                <div class="card">
+                  <img src="https://plus.unsplash.com/premium_photo-1672797996622-d2a8d87f13b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29tcGFueXxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5><%= company.company_name %></h5>
+                    <p><%= company.industry %></p>
+                    <p><%= company.address %></p>
+                    <p><%= link_to "detail", company_path(company) %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 
 </div>
