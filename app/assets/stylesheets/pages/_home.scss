@@ -1,1 +1,6 @@
 // Specific CSS for your home-page
+
+main {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}

@@ -18,3 +18,24 @@
   width: 240px;
   height: 340px;
 }
+
+
+
+.card-show {
+
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  background-color: $light-gray;
+  width: 600px;
+  height: 300px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 5px;
+
+  img {
+    width: 400px;
+    height: auto;
+  }
+
+}
