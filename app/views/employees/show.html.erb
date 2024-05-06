@@ -1,17 +1,48 @@
-<div>
-  <h1><%= @employee.fullname%></h1>
+<div class="container d-flex justify-content-center p-4 m-5">
+  <div class="card-show m-4">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29tcGFueXxlbnwwfHwwfHx8MA%3D%3D" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <div>
+            <h5 class="card-text"><%= @employee.fullname %></h5>
+            <p class="card-text"><small class="text-body-secondary"><%= @employee.phone_number %></small></p>
+            <p class="card-text"><small class="text-body-secondary"><%= @employee.email %></small></p>
+            <p class="card-text"><small class="text-body-secondary">Company: <%= @company.company_name %></small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <ul>
-    <li><%= @employee.fullname %></li>
-    <li><%= @employee.phone_number %></li>
-    <li><%= @employee.email %></li>
-  </ul>
 
+<div class="container m-5 w-100">
+  <div class="row d-flex align-items-evenly">
+    <div class="col d-flex justify-content-center">
 
-  <%= render "employees/update", company: @company, employee: @employee %>
+      <div >
+        <button class="btn btn-info m-2">
+          <i class="fa-solid fa-building"></i>&nbsp;<%= link_to "Company Info", company_path(@company) %>
+        </button>
+      </div>
 
-  <%= link_to "Delete", company_employee_path(@company, @employee),
-      data: {turbo_method: :delete, turbo_confirm: "Do you want to delete this employee?"}
-    %>
+      <div data-controller="edit" data-edit-target="content" class="card-edit m-2" >
+        <%= render "employees/update", company: @company, employee: @employee %>
+      </div>
+
+      <div>
+        <button class="btn btn-primary m-2">
+          <i class="fa-solid fa-trash"></i>&nbsp;
+          <%= link_to "Delete", company_employee_path(@company, @employee),
+              data: {turbo_method: :delete, turbo_confirm: "Do you want to delete this employee?"}
+            %>
+        </button>
+      </div>
+
+    </div>
+  </div>
 
 </div>
