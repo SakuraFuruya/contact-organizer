@@ -1,11 +1,15 @@
-<div>
-  <%= form_with model: new_employee, url: company_employees_path do |f| %>
-    <%= f.label :fullname %>
-    <%= f.text_field :fullname %>
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.submit %>
-  <% end  %>
+<div class="row form">
+  <div class="col-12">
+    <div md-3>
+      <%= simple_form_for new_employee, url: company_employees_path do |f| %>
+        <%= f.label :fullname %>
+        <%= f.text_field :fullname %>
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <%= f.submit class: ('btn btn-info') %>
+      <% end  %>
+    </div>
+  </div>
 </div>

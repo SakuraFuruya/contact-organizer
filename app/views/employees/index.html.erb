@@ -1,16 +1,44 @@
-<div>
-  <h1>All employees </h1>
+<div class="container">
 
-  <ul>
-    <% @employees.each do |employee| %>
-    <li><%= employee.fullname %></li>
-    <li><%= employee.phone_number %></li>
-    <li><%= employee.email %></li>
-    <%= link_to "Detail", company_employee_path(@company, employee) %>
-    <% end %>
-  </ul>
 
-  <h2>Create a new employee</h2>
-  <%= render 'employees/new', new_employee: @new_employee %>
+  <div class="row">
+
+    <div class="col-lg-3 col-md-12" id="form-map">
+      <div class="row mt-2">
+        <div class="form-new col-lg-12 mt-3">
+          <h4 class="text-center mt-3">Create a new person</h4>
+          <div class="container-md d-flex justify-content-center">
+            <%= render 'employees/new', new_employee: @new_employee %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-9 col-md-12" id="cards-list">
+      <div class="width-100">
+        <div class="row mt-2">
+          <h2 class="text-center mt-3">All Persons</h2>
+          <div class="row cards-container p-1 m-1 d-flex justify-content-start">
+            <% @employees.each do |employee| %>
+              <div class="col-lg-3 col-md-4 col-sm-12 m-4">
+                <div class="card">
+                  <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
+                  <div class="card-body">
+                    <h5><%= employee.fullname %></h5>
+                    <p><%= employee.phone_number %></p>
+                    <p><%= employee.email %></p>
+                    <p><%= link_to "Detail", company_employee_path(@company, employee)  %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 
 </div>
