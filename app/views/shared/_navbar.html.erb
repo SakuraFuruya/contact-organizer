@@ -1,8 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-    </a>
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-heart"></i>
+    <% end %>
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,8 +13,9 @@
       <ul class="navbar-nav me-auto ">
         <% if user_signed_in? %>
           <li>
-            <i class="fa-solid fa-right-to-bracket m-3"></i>
-            <button class="btn btn-primary" type="submit"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+            <button class="btn btn-primary">
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            </button>
           </li>
         <% else %>
            <li class="nav-item active">
