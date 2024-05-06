@@ -1,11 +1,11 @@
-  <div>
-    <%= form_with model:@employee, url: company_employee_path(company, employee) do |f| %>
-      <%= f.label :fullname %>
-      <%= f.text_field :fullname %>
-      <%= f.label :phone_number %>
-      <%= f.text_field :phone_number %>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-      <%= f.submit %>
-    <% end  %>
+<div>
+  <button class="btn btn-success" data-action="click->edit#displayForm"><i class="fa-solid fa-pen"></i>&nbsp; Update</button>
+  <div data-edit-target="form" class="form-update d-none">
+    <%= simple_form_for([company, employee]) do |f| %>
+      <%= f.input :fullname, input_html:{placeholder: "Name"} %>
+      <%= f.input :phone_number %>
+      <%= f.input :email %>
+      <%= f.button :submit, class: 'btn btn-info', value: 'Done' %>
+    <% end %>
   </div>
+</div>
